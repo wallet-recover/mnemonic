@@ -29,7 +29,7 @@ const WalletRecovery = () => {
     const hdNode = ethers.HDNodeWallet.fromSeed(seed);
     const derivedWallets: Wallet[] = [];
     for (let i = 0; i < 5; i++) {
-      const child = hdNode.derivePath(`m/44'/60'/0'/0/${i}`);
+      const child = hdNode.deriveChild(i);
       const balance = await getBalance(child.address);
       derivedWallets.push({
         address: child.address,
