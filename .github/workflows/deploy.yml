@@ -23,6 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
+          cache-dependency-path: wallet-recover-app/pnpm-lock.yaml
           node-version: 18.x
           cache: 'pnpm'
 
